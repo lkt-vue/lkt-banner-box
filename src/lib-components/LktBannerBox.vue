@@ -9,13 +9,15 @@ const props = withDefaults(defineProps<{
     subLabelTag?: string,
     imgSrc?: string,
     isParallax?: boolean,
+    opacity?: string|number,
 }>(), {
     label: '',
     labelTag: 'p',
     subLabel: '',
     subLabelTag: 'p',
     imgSrc: '',
-    isParallax: false
+    isParallax: false,
+    opacity: ''
 });
 
 const slots = useSlots();
@@ -32,8 +34,17 @@ const computedLabelTag = computed(() => {
         if (props.imgSrc !== '') return true;
         return false;
     }),
+    renderOpacityBox = computed(() => {
+        if (!renderArtBox.value) return false;
+        if (props.opacity !== '') return true;
+        return false;
+    }),
     computedArtStyles = computed(() => {
         if (props.imgSrc) return 'background-image: url("'+props.imgSrc + '");';
+        return '';
+    }),
+    computedOpacityStyles = computed(() => {
+        if (props.opacity) return 'opacity: ' + props.opacity;
         return '';
     }),
     classes = computed(() => {
@@ -48,6 +59,8 @@ const computedLabelTag = computed(() => {
     <div class="lkt-banner-box-container">
         <div class="lkt-banner-box" :class="classes">
             <div class="lkt-banner-box-art" v-if="renderArtBox" :style="computedArtStyles">
+            </div>
+            <div class="lkt-banner-box-opacity" v-if="renderOpacityBox" :style="computedOpacityStyles">
             </div>
             <div class="lkt-banner-box-content">
                 <div v-if="label" class="lkt-banner-box-label-container">

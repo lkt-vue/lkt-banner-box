@@ -1,14 +1,14 @@
-import { defineComponent as v, useSlots as _, computed as t, openBlock as l, createElementBlock as n, createElementVNode as s, normalizeClass as y, normalizeStyle as L, createCommentVNode as o, createBlock as u, resolveDynamicComponent as b, withCtx as c, createTextVNode as i, toDisplayString as d, unref as S, renderSlot as B } from "vue";
-const T = { class: "lkt-banner-box-container" }, h = { class: "lkt-banner-box-content" }, C = {
+import { defineComponent as S, useSlots as B, computed as l, openBlock as t, createElementBlock as n, createElementVNode as u, normalizeClass as L, normalizeStyle as c, createCommentVNode as r, createBlock as i, resolveDynamicComponent as b, withCtx as d, createTextVNode as p, toDisplayString as f, unref as T, renderSlot as h } from "vue";
+const C = { class: "lkt-banner-box-container" }, N = { class: "lkt-banner-box-content" }, V = {
   key: 0,
   class: "lkt-banner-box-label-container"
-}, N = {
+}, z = {
   key: 1,
   class: "lkt-banner-box-sub-label-container"
-}, V = {
+}, A = {
   key: 2,
   class: "lkt-banner-box-extra"
-}, z = /* @__PURE__ */ v({
+}, D = /* @__PURE__ */ S({
   __name: "LktBannerBox",
   props: {
     label: { default: "" },
@@ -16,51 +16,57 @@ const T = { class: "lkt-banner-box-container" }, h = { class: "lkt-banner-box-co
     subLabel: { default: "" },
     subLabelTag: { default: "p" },
     imgSrc: { default: "" },
-    isParallax: { type: Boolean, default: !1 }
+    isParallax: { type: Boolean, default: !1 },
+    opacity: { default: "" }
   },
-  setup(r) {
-    const e = r, m = _(), f = t(() => e.labelTag ? e.labelTag : "p"), p = t(() => e.subLabelTag ? e.subLabelTag : "p"), k = t(() => e.imgSrc !== ""), x = t(() => e.imgSrc ? 'background-image: url("' + e.imgSrc + '");' : ""), g = t(() => {
+  setup(o) {
+    const e = o, m = B(), k = l(() => e.labelTag ? e.labelTag : "p"), y = l(() => e.subLabelTag ? e.subLabelTag : "p"), s = l(() => e.imgSrc !== ""), x = l(() => s.value ? e.opacity !== "" : !1), v = l(() => e.imgSrc ? 'background-image: url("' + e.imgSrc + '");' : ""), g = l(() => e.opacity ? "opacity: " + e.opacity : ""), _ = l(() => {
       let a = [];
       return e.isParallax && a.push("is-parallax"), a.join(" ");
     });
-    return (a, A) => (l(), n("div", T, [
-      s("div", {
-        class: y(["lkt-banner-box", g.value])
+    return (a, E) => (t(), n("div", C, [
+      u("div", {
+        class: L(["lkt-banner-box", _.value])
       }, [
-        k.value ? (l(), n("div", {
+        s.value ? (t(), n("div", {
           key: 0,
           class: "lkt-banner-box-art",
-          style: L(x.value)
-        }, null, 4)) : o("", !0),
-        s("div", h, [
-          a.label ? (l(), n("div", C, [
-            (l(), u(b(f.value), { class: "lkt-banner-box-label" }, {
-              default: c(() => [
-                i(d(a.label), 1)
+          style: c(v.value)
+        }, null, 4)) : r("", !0),
+        x.value ? (t(), n("div", {
+          key: 1,
+          class: "lkt-banner-box-opacity",
+          style: c(g.value)
+        }, null, 4)) : r("", !0),
+        u("div", N, [
+          a.label ? (t(), n("div", V, [
+            (t(), i(b(k.value), { class: "lkt-banner-box-label" }, {
+              default: d(() => [
+                p(f(a.label), 1)
               ]),
               _: 1
             }))
-          ])) : o("", !0),
-          a.subLabel ? (l(), n("div", N, [
-            (l(), u(b(p.value), { class: "lkt-banner-box-sub-label" }, {
-              default: c(() => [
-                i(d(a.subLabel), 1)
+          ])) : r("", !0),
+          a.subLabel ? (t(), n("div", z, [
+            (t(), i(b(y.value), { class: "lkt-banner-box-sub-label" }, {
+              default: d(() => [
+                p(f(a.subLabel), 1)
               ]),
               _: 1
             }))
-          ])) : o("", !0),
-          S(m).default ? (l(), n("div", V, [
-            B(a.$slots, "default")
-          ])) : o("", !0)
+          ])) : r("", !0),
+          T(m).default ? (t(), n("div", A, [
+            h(a.$slots, "default")
+          ])) : r("", !0)
         ])
       ], 2)
     ]));
   }
-}), E = {
-  install: (r) => {
-    r.component("lkt-banner-box") === void 0 && r.component("lkt-banner-box", z);
+}), P = {
+  install: (o) => {
+    o.component("lkt-banner-box") === void 0 && o.component("lkt-banner-box", D);
   }
 };
 export {
-  E as default
+  P as default
 };

@@ -55,6 +55,18 @@
     background-size: cover;
 }
 
+.lkt-banner-box-opacity {
+    width: var(--lkt-banner-box-width-opacity);
+    height: var(--lkt-banner-box-height-opacity);
+    background: var(--lkt-banner-box-bg-opacity);
+
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-size: cover;
+}
+
 .lkt-banner-box.is-parallax .lkt-banner-box-art {
     background-attachment: fixed;
     background-position: center;
@@ -71,7 +83,7 @@
     gap: var(--lkt-banner-box-gap-content);
     padding: var(--lkt-banner-box-padding-content);
     width: var(--lkt-banner-box-width-content);
-    z-index: 2;
+    z-index: 3;
 }
 
 .lkt-banner-box-label-container {

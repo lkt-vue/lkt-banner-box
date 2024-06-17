@@ -5,6 +5,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__
     subLabelTag?: string | undefined;
     imgSrc?: string | undefined;
     isParallax?: boolean | undefined;
+    opacity?: string | number | undefined;
 }>, {
     label: string;
     labelTag: string;
@@ -12,6 +13,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__
     subLabelTag: string;
     imgSrc: string;
     isParallax: boolean;
+    opacity: string;
 }>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<{
     label?: string | undefined;
     labelTag?: string | undefined;
@@ -19,6 +21,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__
     subLabelTag?: string | undefined;
     imgSrc?: string | undefined;
     isParallax?: boolean | undefined;
+    opacity?: string | number | undefined;
 }>, {
     label: string;
     labelTag: string;
@@ -26,7 +29,9 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<__
     subLabelTag: string;
     imgSrc: string;
     isParallax: boolean;
+    opacity: string;
 }>>>, {
+    opacity: string | number;
     label: string;
     labelTag: string;
     subLabel: string;
