@@ -40,9 +40,9 @@
     --lkt-banner-box-height-art: 100%;
 
     /** Border */
-    --lkt-banner-box-border-radius: 5px;
+    --lkt-banner-box-border-radius: 0px;
     --lkt-banner-box-border-width: 0px;
-    --lkt-banner-box-border-width-art: 1px;
+    --lkt-banner-box-border-width-art: 0px;
     --lkt-banner-box-border-style: solid;
     --lkt-banner-box-border-style-art: solid;
 
