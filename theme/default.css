@@ -1,0 +1,60 @@
+:root {
+    --lkt-banner-box-align-items: center;
+    --lkt-banner-box-align-items-art: center;
+    --lkt-banner-box-align-items-content: center;
+    --lkt-banner-box-align-items-label-container: center;
+    --lkt-banner-box-justify-content: center;
+    --lkt-banner-box-justify-content-art: center;
+    --lkt-banner-box-justify-content-content: center;
+    --lkt-banner-box-justify-content-label-container: center;
+    --lkt-banner-box-flex-direction: row;
+    --lkt-banner-box-flex-direction-art: column;
+    --lkt-banner-box-flex-direction-content: column;
+    --lkt-banner-box-flex-direction-label-container: column;
+
+    /** Font */
+    --lkt-banner-box-font-family: system-ui, Helvetica;
+    --lkt-banner-box-font-family-label: system-ui, Helvetica;
+    --lkt-banner-box-font-size: 17px;
+    --lkt-banner-box-font-size-label: 17px;
+    --lkt-banner-box-font-weight: 400;
+    --lkt-banner-box-font-weight-label: 400;
+    --lkt-banner-box-line-height: 1;
+    --lkt-banner-box-line-height-label: 1;
+    --lkt-banner-box-text-align: left;
+    --lkt-banner-box-text-align-label: left;
+
+    /** Sizing */
+    --lkt-banner-box-width: 100%;
+    --lkt-banner-box-min-width: 150px;
+    --lkt-banner-box-min-height: 380px;
+    --lkt-banner-box-height: 380px;
+    --lkt-banner-box-padding: 15px;
+    --lkt-banner-box-padding-content: 15px;
+    --lkt-banner-box-gap: 15px;
+    --lkt-banner-box-gap-content: 15px;
+    --lkt-banner-box-margin-label: 0;
+    --lkt-banner-box-width-content: 100%;
+    --lkt-banner-box-width-art: 100%;
+    --lkt-banner-box-width-label-container: 100%;
+    --lkt-banner-box-height-art: 100%;
+
+    /** Border */
+    --lkt-banner-box-border-radius: 5px;
+    --lkt-banner-box-border-width: 0px;
+    --lkt-banner-box-border-width-art: 1px;
+    --lkt-banner-box-border-style: solid;
+    --lkt-banner-box-border-style-art: solid;
+
+    /** Colors */
+    --lkt-banner-box-color: #000000;
+    --lkt-banner-box-bg: #007ebc;
+    --lkt-banner-box-bg-art: transparent;
+    --lkt-banner-box-border-color: #ddd;
+    --lkt-banner-box-border-color-art: #ddd;
+
+    /** Effects */
+    --lkt-banner-box-shadow: none;
+    --lkt-banner-box-transition: all linear 100ms;
+
+}
