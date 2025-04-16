@@ -44,15 +44,25 @@ const computedLabelTag = computed(() => {
             <div class="lkt-banner-art" v-if="renderArtBox" :style="computedArtStyles"></div>
             <div class="lkt-banner-opacity" v-if="renderOpacityBox" :style="computedOpacityStyles"></div>
             <div class="lkt-banner-content">
-                <div v-if="header?.text" class="lkt-banner-label-container">
+                <div v-if="header?.text || slots.header" class="lkt-banner-label-container">
                     <component :is="computedLabelTag" class="lkt-banner-label">
-                        {{ header.text }}
+                        <template v-if="slots.header">
+                            <slot name="header"/>
+                        </template>
+                        <template v-else>
+                            {{ header.text }}
+                        </template>
                     </component>
                 </div>
 
-                <div v-if="subHeader?.text" class="lkt-banner-sub-label-container">
+                <div v-if="subHeader?.text || slots.subHeader" class="lkt-banner-sub-label-container">
                     <component :is="computedSubLabelTag" class="lkt-banner-sub-label">
+                      <template v-if="slots.subHeader">
+                        <slot name="subHeader"/>
+                      </template>
+                      <template v-else>
                         {{ subHeader.text }}
+                      </template>
                     </component>
                 </div>
 
