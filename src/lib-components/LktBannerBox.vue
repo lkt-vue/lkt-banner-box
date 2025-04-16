@@ -1,6 +1,5 @@
 <script setup lang="ts">
-
-import {computed, useSlots} from "vue";
+  import {computed, useSlots} from "vue";
 
 const props = withDefaults(defineProps<{
     label?: string,
@@ -58,10 +57,8 @@ const computedLabelTag = computed(() => {
 <template>
     <div class="lkt-banner-box-container">
         <div class="lkt-banner-box" :class="classes">
-            <div class="lkt-banner-box-art" v-if="renderArtBox" :style="computedArtStyles">
-            </div>
-            <div class="lkt-banner-box-opacity" v-if="renderOpacityBox" :style="computedOpacityStyles">
-            </div>
+            <div class="lkt-banner-box-art" v-if="renderArtBox" :style="computedArtStyles"></div>
+            <div class="lkt-banner-box-opacity" v-if="renderOpacityBox" :style="computedOpacityStyles"></div>
             <div class="lkt-banner-box-content">
                 <div v-if="label" class="lkt-banner-box-label-container">
                     <component :is="computedLabelTag" class="lkt-banner-box-label">
