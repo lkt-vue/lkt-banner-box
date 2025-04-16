@@ -1,65 +1,63 @@
-:root {
-    --lkt-banner-box-align-items: center;
-    --lkt-banner-box-align-items-art: center;
-    --lkt-banner-box-align-items-content: center;
-    --lkt-banner-box-align-items-label-container: center;
-    --lkt-banner-box-justify-content: center;
-    --lkt-banner-box-justify-content-art: center;
-    --lkt-banner-box-justify-content-content: center;
-    --lkt-banner-box-justify-content-label-container: center;
-    --lkt-banner-box-flex-direction: row;
-    --lkt-banner-box-flex-direction-art: column;
-    --lkt-banner-box-flex-direction-content: column;
-    --lkt-banner-box-flex-direction-label-container: column;
+.lkt-banner {
+    --lkt-banner--align-items: center;
+    --lkt-banner--background: #007ebc;
+    --lkt-banner--border-radius: 0px;
+    --lkt-banner--border-width: 0px;
+    --lkt-banner--border-style: solid;
+    --lkt-banner--border-color: #ddd;
+    --lkt-banner--box-shadow: none;
+    --lkt-banner--color: #000000;
+    --lkt-banner--flex-direction: row;
+    --lkt-banner--font-family: system-ui, Helvetica;
+    --lkt-banner--font-size: 17px;
+    --lkt-banner--font-weight: 400;
+    --lkt-banner--gap: 15px;
+    --lkt-banner--height: 380px;
+    --lkt-banner--justify-content: center;
+    --lkt-banner--line-height: 1;
+    --lkt-banner--min-width: 150px;
+    --lkt-banner--min-height: 380px;
+    --lkt-banner--padding: 15px;
+    --lkt-banner--transition: all linear 100ms;
+    --lkt-banner--text-align: left;
+    --lkt-banner--width: 100%;
 
-    /** Font */
-    --lkt-banner-box-font-family: system-ui, Helvetica;
-    --lkt-banner-box-font-family-label: system-ui, Helvetica;
-    --lkt-banner-box-font-size: 17px;
-    --lkt-banner-box-font-size-label: 17px;
-    --lkt-banner-box-font-weight: 400;
-    --lkt-banner-box-font-weight-label: 400;
-    --lkt-banner-box-line-height: 1;
-    --lkt-banner-box-line-height-label: 1;
-    --lkt-banner-box-text-align: left;
-    --lkt-banner-box-text-align-label: left;
+    /** Element: Art */
+    --lkt-banner--art--align-items: center;
+    --lkt-banner--art--background: transparent;
+    --lkt-banner--art--color: #ddd;
+    --lkt-banner--art--border-width: 0px;
+    --lkt-banner--art--border-style: solid;
+    --lkt-banner--art--border-color: #ddd;
+    --lkt-banner--art--justify-content: center;
+    --lkt-banner--art--flex-direction: column;
+    --lkt-banner--art--height: 100%;
+    --lkt-banner--art--width: 100%;
 
-    /** Sizing */
-    --lkt-banner-box-width: 100%;
-    --lkt-banner-box-min-width: 150px;
-    --lkt-banner-box-min-height: 380px;
-    --lkt-banner-box-height: 380px;
-    --lkt-banner-box-padding: 15px;
-    --lkt-banner-box-padding-content: 15px;
-    --lkt-banner-box-gap: 15px;
-    --lkt-banner-box-gap-content: 15px;
-    --lkt-banner-box-margin-label: 0;
-    --lkt-banner-box-width-content: 100%;
-    --lkt-banner-box-width-art: 100%;
-    --lkt-banner-box-width-label-container: 100%;
-    --lkt-banner-box-height-art: 100%;
+    /** Element: Content */
+    --lkt-banner--content--align-items: center;
+    --lkt-banner--content--flex-direction: column;
+    --lkt-banner--content--gap: 15px;
+    --lkt-banner--content--justify-content: center;
+    --lkt-banner--content--padding: 15px;
+    --lkt-banner--content--width: 100%;
 
-    /** Border */
-    --lkt-banner-box-border-radius: 0px;
-    --lkt-banner-box-border-width: 0px;
-    --lkt-banner-box-border-width-art: 0px;
-    --lkt-banner-box-border-style: solid;
-    --lkt-banner-box-border-style-art: solid;
+    /** Element: Label Container */
+    --lkt-banner--label-container--align-items: center;
+    --lkt-banner--label-container--flex-direction: column;
+    --lkt-banner--label-container--justify-content: center;
+    --lkt-banner--label-container--width: 100%;
 
-    /** Colors */
-    --lkt-banner-box-color: #000000;
-    --lkt-banner-box-bg: #007ebc;
-    --lkt-banner-box-bg-art: transparent;
-    --lkt-banner-box-border-color: #ddd;
-    --lkt-banner-box-border-color-art: #ddd;
-    --lkt-banner-box-color-icon: #ddd;
+    /** Element: Label */
+    --lkt-banner--label--font-family: system-ui, Helvetica;
+    --lkt-banner--label--font-size: 17px;
+    --lkt-banner--label--font-weight: 400;
+    --lkt-banner--label--line-height: 1;
+    --lkt-banner--label--margin: 0;
+    --lkt-banner--label--text-align: left;
 
-    /** Effects */
-    --lkt-banner-box-shadow: none;
-    --lkt-banner-box-transition: all linear 100ms;
-
-    /** Opacity */
-    --lkt-banner-box-width-opacity: 100%;
-    --lkt-banner-box-height-opacity: 100%;
-    --lkt-banner-box-bg-opacity: #ffffff;
+    /** Element: Opacity */
+    --lkt-banner--opacity--background: #ffffff;
+    --lkt-banner--opacity--height: 100%;
+    --lkt-banner--opacity--width: 100%;
 }

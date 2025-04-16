@@ -14,7 +14,7 @@ export default {
     build: {
         lib: {
             entry: `${src}/index.ts`,
-            name: 'LktBannerBox',
+            name: 'LktBanner',
             fileName: 'build',
             formats: ['es']
         },

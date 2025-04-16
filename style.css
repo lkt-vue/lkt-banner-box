@@ -1,52 +1,55 @@
-.lkt-banner-box {
-    display: flex;
-    align-items: var(--lkt-banner-box-align-items);
-    justify-content: var(--lkt-banner-box-justify-content);
-    flex-direction: var(--lkt-banner-box-flex-direction);
-    font-size: var(--lkt-banner-box-font-size);
-    font-family: var(--lkt-banner-box-font-family), serif;
-    font-weight: var(--lkt-banner-box-font-weight);
-    line-height: var(--lkt-banner-box-line-height);
-    text-align: var(--lkt-banner-box-text-align);
+.lkt-banner {
+    font-size: var(--lkt-banner--font-size);
+    font-family: var(--lkt-banner--font-family), serif;
+    font-weight: var(--lkt-banner--font-weight);
+    line-height: var(--lkt-banner--line-height);
+    text-align: var(--lkt-banner--text-align);
 
-    width: var(--lkt-banner-box-width);
-    min-width: var(--lkt-banner-box-min-width);
-    min-height: var(--lkt-banner-box-min-height);
-    height: var(--lkt-banner-box-height);
-    padding: var(--lkt-banner-box-padding);
-    gap: var(--lkt-banner-box-gap);
+    border-radius: var(--lkt-banner--border-radius);
+    border: var(--lkt-banner--border-width) var(--lkt-banner--border-style) var(--lkt-banner--border-color);
 
-    border-radius: var(--lkt-banner-box-border-radius);
-    border: var(--lkt-banner-box-border-width) var(--lkt-banner-box-border-style) var(--lkt-banner-box-border-color);
-
-    color: var(--lkt-banner-box-color);
-    background: var(--lkt-banner-box-bg);
-    box-shadow: var(--lkt-banner-box-shadow);
-    transition: var(--lkt-banner-box-transition);
+    color: var(--lkt-banner--color);
+    background: var(--lkt-banner--background);
+    box-shadow: var(--lkt-banner--box-shadow);
+    transition: var(--lkt-banner--transition);
 
     position: relative;
     overflow: hidden;
 }
 
-.lkt-banner-box-label {
-    font-size: var(--lkt-banner-box-font-size-label);
-    font-family: var(--lkt-banner-box-font-family-label), serif;
-    font-weight: var(--lkt-banner-box-font-weight-label);
-    line-height: var(--lkt-banner-box-line-height-label);
-    text-align: var(--lkt-banner-box-text-align-label);
-    margin: var(--lkt-banner-box-margin-label);
-}
-.lkt-banner-box-art {
-    border: var(--lkt-banner-box-border-width-art) var(--lkt-banner-box-border-style-art) var(--lkt-banner-box-border-color-art);
+.lkt-banner-main {
     display: flex;
-    align-items: var(--lkt-banner-box-align-items-art);
-    justify-content: var(--lkt-banner-box-justify-content-art);
-    flex-direction: var(--lkt-banner-box-flex-direction-art);
+    align-items: var(--lkt-banner--align-items);
+    flex-direction: var(--lkt-banner--flex-direction);
+    justify-content: var(--lkt-banner--justify-content);
+
+    width: var(--lkt-banner--width);
+    min-width: var(--lkt-banner--min-width);
+    min-height: var(--lkt-banner--min-height);
+    height: var(--lkt-banner--height);
+    padding: var(--lkt-banner--padding);
+    gap: var(--lkt-banner--gap);
+}
+
+.lkt-banner-label {
+    font-size: var(--lkt-banner--label--font-size);
+    font-family: var(--lkt-banner--label--font-family), serif;
+    font-weight: var(--lkt-banner--label--font-weight);
+    line-height: var(--lkt-banner--label--line-height);
+    text-align: var(--lkt-banner--label--text-align);
+    margin: var(--lkt-banner--label--margin);
+}
+.lkt-banner-art {
+    border: var(--lkt-banner--art--border-width) var(--lkt-banner--art--border-style) var(--lkt-banner--art--border-color);
+    display: flex;
+    align-items: var(--lkt-banner--art--align-items);
+    justify-content: var(--lkt-banner--art--justify-content);
+    flex-direction: var(--lkt-banner--art--flex-direction);
     overflow: hidden;
-    width: var(--lkt-banner-box-width-art);
-    height: var(--lkt-banner-box-height-art);
-    background: var(--lkt-banner-box-bg-art);
-    color: var(--lkt-banner-box-color-icon);
+    width: var(--lkt-banner--art--width);
+    height: var(--lkt-banner--art--height);
+    background: var(--lkt-banner--art--background);
+    color: var(--lkt-banner--art--color);
 
     position: absolute;
     z-index: 1;
@@ -55,10 +58,10 @@
     background-size: cover;
 }
 
-.lkt-banner-box-opacity {
-    width: var(--lkt-banner-box-width-opacity);
-    height: var(--lkt-banner-box-height-opacity);
-    background: var(--lkt-banner-box-bg-opacity);
+.lkt-banner-opacity {
+    width: var(--lkt-banner--opacity--width);
+    height: var(--lkt-banner--opacity--height);
+    background: var(--lkt-banner--opacity--background);
 
     position: absolute;
     z-index: 2;
@@ -67,7 +70,7 @@
     background-size: cover;
 }
 
-.lkt-banner-box.is-parallax .lkt-banner-box-art {
+.lkt-banner.is-parallax .lkt-banner-art {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,21 +78,21 @@
 }
 
 
-.lkt-banner-box-content {
+.lkt-banner-content {
     display: flex;
-    align-items: var(--lkt-banner-box-align-items-content);
-    justify-content: var(--lkt-banner-box-justify-content-content);
-    flex-direction: var(--lkt-banner-box-flex-direction-content);
-    gap: var(--lkt-banner-box-gap-content);
-    padding: var(--lkt-banner-box-padding-content);
-    width: var(--lkt-banner-box-width-content);
+    align-items: var(--lkt-banner--content--align-items);
+    justify-content: var(--lkt-banner--content--justify-content);
+    flex-direction: var(--lkt-banner--content--flex-direction);
+    gap: var(--lkt-banner--content--gap);
+    padding: var(--lkt-banner--content--padding);
+    width: var(--lkt-banner--content--width);
     z-index: 3;
 }
 
-.lkt-banner-box-label-container {
-    width: var(--lkt-banner-box-width-label-container);
+.lkt-banner-label-container {
+    width: var(--lkt-banner--label-container--width);
     display: flex;
-    align-items: var(--lkt-banner-box-align-items-label-container);
-    justify-content: var(--lkt-banner-box-justify-content-label-container);
-    flex-direction: var(--lkt-banner-box-flex-direction-label-container);
+    align-items: var(--lkt-banner--label-container--align-items);
+    justify-content: var(--lkt-banner--label-container--justify-content);
+    flex-direction: var(--lkt-banner--label-container--flex-direction);
 }

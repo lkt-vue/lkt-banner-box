@@ -1,45 +1,29 @@
 <script setup lang="ts">
-  import {computed, useSlots} from "vue";
+  import { computed, useSlots } from 'vue';
+  import { Banner, BannerConfig, BannerType, getDefaultValues } from 'lkt-vue-kernel';
 
-const props = withDefaults(defineProps<{
-    label?: string,
-    labelTag?: string,
-    subLabel?: string,
-    subLabelTag?: string,
-    imgSrc?: string,
-    isParallax?: boolean,
-    opacity?: string|number,
-}>(), {
-    label: '',
-    labelTag: 'p',
-    subLabel: '',
-    subLabelTag: 'p',
-    imgSrc: '',
-    isParallax: false,
-    opacity: ''
-});
+  const props = withDefaults(defineProps<BannerConfig>(), getDefaultValues(Banner));
 
 const slots = useSlots();
 
 const computedLabelTag = computed(() => {
-        if (!props.labelTag) return 'p';
-        return props.labelTag;
+        if (!props.header?.tag) return 'p';
+        return props.header.tag;
     }),
     computedSubLabelTag = computed(() => {
-        if (!props.subLabelTag) return 'p';
-        return props.subLabelTag;
+      if (!props.subHeader?.tag) return 'p';
+      return props.subHeader.tag;
     }),
     renderArtBox = computed(() => {
-        if (props.imgSrc !== '') return true;
-        return false;
+      return props.art?.src !== '';
     }),
     renderOpacityBox = computed(() => {
         if (!renderArtBox.value) return false;
-        if (props.opacity !== '') return true;
+        if (props.opacity) return true;
         return false;
     }),
     computedArtStyles = computed(() => {
-        if (props.imgSrc) return 'background-image: url("'+props.imgSrc + '");';
+        if (props.art?.src) return 'background-image: url("'+props.art?.src + '");';
         return '';
     }),
     computedOpacityStyles = computed(() => {
@@ -48,31 +32,31 @@ const computedLabelTag = computed(() => {
     }),
     classes = computed(() => {
         let r = [];
-        if (props.isParallax) r.push('is-parallax');
+        if (props.type === BannerType.Parallax) r.push('is-parallax');
         return r.join(' ');
     });
 
 </script>
 
 <template>
-    <div class="lkt-banner-box-container">
-        <div class="lkt-banner-box" :class="classes">
-            <div class="lkt-banner-box-art" v-if="renderArtBox" :style="computedArtStyles"></div>
-            <div class="lkt-banner-box-opacity" v-if="renderOpacityBox" :style="computedOpacityStyles"></div>
-            <div class="lkt-banner-box-content">
-                <div v-if="label" class="lkt-banner-box-label-container">
-                    <component :is="computedLabelTag" class="lkt-banner-box-label">
-                        {{ label }}
+    <div class="lkt-banner" :class="classes">
+        <div class="lkt-banner-main">
+            <div class="lkt-banner-art" v-if="renderArtBox" :style="computedArtStyles"></div>
+            <div class="lkt-banner-opacity" v-if="renderOpacityBox" :style="computedOpacityStyles"></div>
+            <div class="lkt-banner-content">
+                <div v-if="header?.text" class="lkt-banner-label-container">
+                    <component :is="computedLabelTag" class="lkt-banner-label">
+                        {{ header.text }}
                     </component>
                 </div>
 
-                <div v-if="subLabel" class="lkt-banner-box-sub-label-container">
-                    <component :is="computedSubLabelTag" class="lkt-banner-box-sub-label">
-                        {{ subLabel }}
+                <div v-if="subHeader?.text" class="lkt-banner-sub-label-container">
+                    <component :is="computedSubLabelTag" class="lkt-banner-sub-label">
+                        {{ subHeader.text }}
                     </component>
                 </div>
 
-                <div v-if="slots.default" class="lkt-banner-box-extra">
+                <div v-if="slots.default" class="lkt-banner-extra">
                     <slot/>
                 </div>
             </div>

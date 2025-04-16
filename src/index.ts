@@ -3,11 +3,11 @@ import {App, Plugin} from 'vue';
 import "../style.css";
 import {default as libComponent} from './lib-components/LktBannerBox.vue';
 
-const LktBannerBox: Plugin = {
+const LktBanner: Plugin = {
   install: (app: App) => {
     // Register plugin components
-    if (app.component('lkt-banner-box') === undefined) app.component('lkt-banner-box', libComponent);
+    if (app.component('lkt-banner') === undefined) app.component('lkt-banner', libComponent);
   }
 };
 
-export default LktBannerBox;
+export default LktBanner;
