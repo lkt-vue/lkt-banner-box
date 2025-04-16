@@ -1,16 +1,16 @@
-var M = Object.defineProperty;
-var B = (e, t, r) => t in e ? M(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r }) : e[t] = r;
-var l = (e, t, r) => B(e, typeof t != "symbol" ? t + "" : t, r);
-import { defineComponent as T, mergeDefaults as N, useSlots as R, computed as c, createElementBlock as i, openBlock as n, normalizeClass as F, createElementVNode as f, createCommentVNode as u, normalizeStyle as x, unref as d, createBlock as g, resolveDynamicComponent as C, withCtx as L, renderSlot as v, Fragment as A, createTextVNode as w, toDisplayString as S } from "vue";
+var T = Object.defineProperty;
+var N = (e, t, r) => t in e ? T(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r }) : e[t] = r;
+var n = (e, t, r) => N(e, typeof t != "symbol" ? t + "" : t, r);
+import { defineComponent as R, mergeDefaults as _, useSlots as F, computed as i, resolveComponent as z, createElementBlock as s, openBlock as l, normalizeClass as U, createElementVNode as h, createCommentVNode as c, normalizeStyle as g, createBlock as v, normalizeProps as V, mergeProps as O, unref as d, resolveDynamicComponent as C, withCtx as L, renderSlot as k, Fragment as A, createTextVNode as w, toDisplayString as S } from "vue";
 import "lkt-string-tools";
-var z = ((e) => (e.Button = "button", e.Submit = "submit", e.Reset = "reset", e.Anchor = "anchor", e.Content = "content", e.Switch = "switch", e.HiddenSwitch = "hidden-switch", e.Split = "split", e.SplitLazy = "split-lazy", e.SplitEver = "split-ever", e.Tooltip = "tooltip", e.TooltipLazy = "tooltip-lazy", e.TooltipEver = "tooltip-ever", e.FileUpload = "file-upload", e.ImageUpload = "image-upload", e))(z || {}), U = ((e) => (e.Text = "text", e.Email = "email", e.Tel = "tel", e.Password = "password", e.Search = "search", e.Number = "number", e.Color = "color", e.Range = "range", e.Textarea = "textarea", e.Html = "html", e.Date = "date", e.File = "file", e.Image = "image", e.Select = "select", e.Check = "check", e.Switch = "switch", e.Calc = "calc", e.Card = "card", e.Elements = "elements", e))(U || {}), V = ["lktDateProps", "lktStrictItem", "lktExcludedProps"], o, _ = (o = class {
+var j = ((e) => (e.Button = "button", e.Submit = "submit", e.Reset = "reset", e.Anchor = "anchor", e.Content = "content", e.Switch = "switch", e.HiddenSwitch = "hidden-switch", e.Split = "split", e.SplitLazy = "split-lazy", e.SplitEver = "split-ever", e.Tooltip = "tooltip", e.TooltipLazy = "tooltip-lazy", e.TooltipEver = "tooltip-ever", e.FileUpload = "file-upload", e.ImageUpload = "image-upload", e))(j || {}), q = ((e) => (e.Text = "text", e.Email = "email", e.Tel = "tel", e.Password = "password", e.Search = "search", e.Number = "number", e.Color = "color", e.Range = "range", e.Textarea = "textarea", e.Html = "html", e.Date = "date", e.File = "file", e.Image = "image", e.Select = "select", e.Check = "check", e.Switch = "switch", e.Calc = "calc", e.Card = "card", e.Elements = "elements", e))(q || {}), $ = ["lktDateProps", "lktStrictItem", "lktExcludedProps"], o, G = (o = class {
   constructor(t) {
   }
   feed(t = {}, r = this) {
-    if (typeof t == "object") for (let [s, p] of Object.entries(t)) r.assignProp(s, p);
+    if (typeof t == "object") for (let [u, m] of Object.entries(t)) r.assignProp(u, m);
   }
   assignProp(t, r) {
-    if (!(V.includes(t) || o.lktExcludedProps.includes(t))) {
+    if (!($.includes(t) || o.lktExcludedProps.includes(t))) {
       if (o.lktDateProps.includes(t)) {
         this[t] = new Date(r);
         return;
@@ -18,108 +18,117 @@ var z = ((e) => (e.Button = "button", e.Submit = "submit", e.Reset = "reset", e.
       this[t] = r;
     }
   }
-}, l(o, "lktAllowUndefinedProps", []), l(o, "lktExcludedProps", []), l(o, "lktDateProps", []), l(o, "lktStrictItem", !1), l(o, "lktDefaultValues", []), o), O = ((e) => (e.Auto = "auto", e.Always = "always", e.Lazy = "lazy", e.Ever = "ever", e))(O || {}), j = ((e) => (e.Transform = "transform", e.Height = "height", e.Display = "display", e))(j || {}), q = ((e) => (e.Href = "href", e.RouterLink = "router-link", e.RouterLinkBack = "router-link-back", e.Mail = "mail", e.Tel = "tel", e.Tab = "tab", e.Download = "download", e.Action = "action", e.Legacy = "", e))(q || {}), D = ((e) => (e.Static = "static", e.Parallax = "parallax", e))(D || {}), h, $ = (h = class extends _ {
+}, n(o, "lktAllowUndefinedProps", []), n(o, "lktExcludedProps", []), n(o, "lktDateProps", []), n(o, "lktStrictItem", !1), n(o, "lktDefaultValues", []), o), J = ((e) => (e.Auto = "auto", e.Always = "always", e.Lazy = "lazy", e.Ever = "ever", e))(J || {}), K = ((e) => (e.Transform = "transform", e.Height = "height", e.Display = "display", e))(K || {}), Q = ((e) => (e.Href = "href", e.RouterLink = "router-link", e.RouterLinkBack = "router-link-back", e.Mail = "mail", e.Tel = "tel", e.Tab = "tab", e.Download = "download", e.Action = "action", e.Legacy = "", e))(Q || {}), P = ((e) => (e.Static = "static", e.Parallax = "parallax", e))(P || {}), y, X = (y = class extends G {
   constructor(t = {}) {
     super();
-    l(this, "type", "static");
-    l(this, "header");
-    l(this, "subHeader");
-    l(this, "art");
-    l(this, "opacity");
+    n(this, "type", "static");
+    n(this, "header");
+    n(this, "subHeader");
+    n(this, "art");
+    n(this, "media");
+    n(this, "opacity");
     this.feed(t);
   }
-}, l(h, "lktDefaultValues", ["type", "header", "subHeader", "art", "opacity"]), h), G = ((e) => (e.None = "", e.Field = "field", e.Button = "button", e.Anchor = "anchor", e))(G || {}), J = ((e) => (e.A0 = "a0", e.A1 = "a1", e.A2 = "a2", e.A3 = "a3", e.A4 = "a4", e.A5 = "a5", e.A6 = "a6", e.A7 = "a7", e.A8 = "a8", e.A9 = "a9", e))(J || {}), K = ((e) => (e.List = "list", e.Inline = "inline", e.Count = "count", e))(K || {}), Q = ((e) => (e.MinStringLength = "min-str", e.MinNumber = "min-num", e.MaxStringLength = "max-str", e.MaxNumber = "max-num", e.Email = "email", e.Empty = "empty", e.EqualTo = "equal-to", e.MinNumbers = "min-numbers", e.MaxNumbers = "max-numbers", e.MinChars = "min-chars", e.MaxChars = "max-chars", e.MinUpperChars = "min-upper-chars", e.MaxUpperChars = "max-upper-chars", e.MinLowerChars = "min-lower-chars", e.MaxLowerChars = "max-lower-chars", e.MinSpecialChars = "min-special-chars", e.MaxSpecialChars = "max-special-chars", e))(Q || {}), X = ((e) => (e.Ok = "ok", e.Ko = "ko", e.Info = "info", e))(X || {}), Z = ((e) => (e.StorageUnit = "unit", e.Directory = "dir", e.Image = "img", e.Video = "vid", e.File = "file", e))(Z || {}), W = ((e) => (e.H1 = "h1", e.H2 = "h2", e.H3 = "h3", e.H4 = "h4", e.H5 = "h5", e.H6 = "h6", e))(W || {}), Y = ((e) => (e.NotDefined = "", e.Button = "button", e))(Y || {}), ee = ((e) => (e.Start = "start", e.End = "end", e))(ee || {}), te = ((e) => (e.Create = "create", e.Update = "update", e.Read = "read", e))(te || {}), ae = ((e) => (e.Inline = "inline", e.Modal = "modal", e))(ae || {}), re = ((e) => (e.Top = "top", e.Bottom = "bottom", e))(re || {}), le = ((e) => (e.Changed = "changed", e.Always = "always", e.Never = "never", e))(le || {}), oe = ((e) => (e.Manual = "manual", e.Auto = "auto", e.Delay = "delay", e))(oe || {}), ne = ((e) => (e.Toast = "toast", e.Inline = "inline", e))(ne || {}), ie = ((e) => (e.Anchor = "anchor", e.Button = "button", e.Entry = "entry", e))(ie || {}), se = ((e) => (e.Modal = "modal", e.Confirm = "confirm", e))(se || {}), ce = ((e) => (e.Pages = "pages", e.PrevNext = "prev-next", e.PagesPrevNext = "pages-prev-next", e.PagesPrevNextFirstLast = "pages-prev-next-first-last", e.LoadMore = "load-more", e.Infinite = "infinite", e))(ce || {}), ue = ((e) => (e.None = "", e.Incremental = "incremental", e.Decremental = "decremental", e))(ue || {}), de = ((e) => (e.NotDefined = "", e.Hidden = "hidden", e.Integer = "integer", e.Decimal = "decimal", e.Auto = "auto", e))(de || {}), pe = ((e) => (e.Table = "table", e.Item = "item", e.Ul = "ul", e.Ol = "ol", e.Carousel = "carousel", e))(pe || {}), me = ((e) => (e[e.Auto = 0] = "Auto", e[e.PreferItem = 1] = "PreferItem", e[e.PreferCustomItem = 2] = "PreferCustomItem", e[e.PreferColumns = 3] = "PreferColumns", e))(me || {}), ve = ((e) => (e.NotDefined = "", e.ActionIcon = "action-icon", e))(ve || {}), he = ((e) => (e.Message = "message", e.Button = "button", e))(he || {}), ke = ((e) => (e.Left = "left", e.Center = "center", e.Right = "right", e))(ke || {}), ye = ((e) => (e.Fixed = "fixed", e.Absolute = "absolute", e))(ye || {}), be = ((e) => (e.Top = "top", e.Bottom = "bottom", e.Center = "center", e.ReferrerCenter = "referrer-center", e))(be || {}), fe = ((e) => (e.Left = "left", e.Right = "right", e.Center = "center", e.LeftCorner = "left-corner", e.RightCorner = "right-corner", e))(fe || {}), xe = ((e) => (e.LktAnchor = "lkt-anchor", e.LktLayoutAccordion = "lkt-layout-accordion", e.LktTextAccordion = "lkt-text-accordion", e.LktLayoutBox = "lkt-layout-box", e.LktTextBox = "lkt-text-box", e.LktButton = "lkt-button", e.LktLayout = "lkt-layout", e.LktHeader = "lkt-header", e.LktIcon = "lkt-icon", e.LktImage = "lkt-image", e.LktText = "lkt-text", e))(xe || {}), ge = ((e) => (e.Grid = "grid", e.FlexRow = "flex-row", e.FlexRows = "flex-rows", e.FlexColumn = "flex-column", e))(ge || {}), Ce = ((e) => (e.None = "", e.Focus = "focus", e.Blur = "blur", e.Always = "always", e))(Ce || {}), Le = ((e) => (e.Auto = "auto", e.Local = "local", e.Remote = "remote", e))(Le || {}), Ae = ((e) => (e.Refresh = "refresh", e.Close = "close", e.ReOpen = "reOpen", e.Exec = "exec", e.Open = "open", e))(Ae || {}), we = ((e) => (e.Asc = "asc", e.Desc = "desc", e))(we || {}), Se = ((e) => (e.Create = "create", e.Update = "update", e.Edit = "edit", e.Drop = "drop", e.Sort = "sort", e.SwitchEditMode = "switch-edit-mode", e.InlineEdit = "inline-edit", e.InlineCreate = "inline-create", e.ModalCreate = "modal-create", e.InlineCreateEver = "inline-create-ever", e))(Se || {}), De = ((e) => (e.Lazy = "lazy", e.Ever = "ever", e))(De || {}), Pe = ((e) => (e.Quick = "quick", e.Full = "full", e))(Pe || {});
-function Ee(e) {
+}, n(y, "lktDefaultValues", ["type", "header", "subHeader", "art", "opacity"]), y), Z = ((e) => (e.None = "", e.Field = "field", e.Button = "button", e.Anchor = "anchor", e))(Z || {}), W = ((e) => (e.A0 = "a0", e.A1 = "a1", e.A2 = "a2", e.A3 = "a3", e.A4 = "a4", e.A5 = "a5", e.A6 = "a6", e.A7 = "a7", e.A8 = "a8", e.A9 = "a9", e))(W || {}), Y = ((e) => (e.List = "list", e.Inline = "inline", e.Count = "count", e))(Y || {}), ee = ((e) => (e.MinStringLength = "min-str", e.MinNumber = "min-num", e.MaxStringLength = "max-str", e.MaxNumber = "max-num", e.Email = "email", e.Empty = "empty", e.EqualTo = "equal-to", e.MinNumbers = "min-numbers", e.MaxNumbers = "max-numbers", e.MinChars = "min-chars", e.MaxChars = "max-chars", e.MinUpperChars = "min-upper-chars", e.MaxUpperChars = "max-upper-chars", e.MinLowerChars = "min-lower-chars", e.MaxLowerChars = "max-lower-chars", e.MinSpecialChars = "min-special-chars", e.MaxSpecialChars = "max-special-chars", e))(ee || {}), te = ((e) => (e.Ok = "ok", e.Ko = "ko", e.Info = "info", e))(te || {}), ae = ((e) => (e.StorageUnit = "unit", e.Directory = "dir", e.Image = "img", e.Video = "vid", e.File = "file", e))(ae || {}), re = ((e) => (e.H1 = "h1", e.H2 = "h2", e.H3 = "h3", e.H4 = "h4", e.H5 = "h5", e.H6 = "h6", e))(re || {}), ne = ((e) => (e.NotDefined = "", e.Button = "button", e))(ne || {}), oe = ((e) => (e.Start = "start", e.End = "end", e))(oe || {}), le = ((e) => (e.Create = "create", e.Update = "update", e.Read = "read", e))(le || {}), ie = ((e) => (e.Inline = "inline", e.Modal = "modal", e))(ie || {}), se = ((e) => (e.Top = "top", e.Bottom = "bottom", e))(se || {}), ue = ((e) => (e.Changed = "changed", e.Always = "always", e.Never = "never", e))(ue || {}), ce = ((e) => (e.Manual = "manual", e.Auto = "auto", e.Delay = "delay", e))(ce || {}), de = ((e) => (e.Toast = "toast", e.Inline = "inline", e))(de || {}), me = ((e) => (e.Anchor = "anchor", e.Button = "button", e.Entry = "entry", e))(me || {}), pe = ((e) => (e.Modal = "modal", e.Confirm = "confirm", e))(pe || {}), he = ((e) => (e.Pages = "pages", e.PrevNext = "prev-next", e.PagesPrevNext = "pages-prev-next", e.PagesPrevNextFirstLast = "pages-prev-next-first-last", e.LoadMore = "load-more", e.Infinite = "infinite", e))(he || {}), ve = ((e) => (e.None = "", e.Incremental = "incremental", e.Decremental = "decremental", e))(ve || {}), ke = ((e) => (e.NotDefined = "", e.Hidden = "hidden", e.Integer = "integer", e.Decimal = "decimal", e.Auto = "auto", e))(ke || {}), ye = ((e) => (e.Table = "table", e.Item = "item", e.Ul = "ul", e.Ol = "ol", e.Carousel = "carousel", e))(ye || {}), be = ((e) => (e[e.Auto = 0] = "Auto", e[e.PreferItem = 1] = "PreferItem", e[e.PreferCustomItem = 2] = "PreferCustomItem", e[e.PreferColumns = 3] = "PreferColumns", e))(be || {}), fe = ((e) => (e.NotDefined = "", e.ActionIcon = "action-icon", e))(fe || {}), xe = ((e) => (e.Message = "message", e.Button = "button", e))(xe || {}), ge = ((e) => (e.Left = "left", e.Center = "center", e.Right = "right", e))(ge || {}), Ce = ((e) => (e.Fixed = "fixed", e.Absolute = "absolute", e))(Ce || {}), Le = ((e) => (e.Top = "top", e.Bottom = "bottom", e.Center = "center", e.ReferrerCenter = "referrer-center", e))(Le || {}), Ae = ((e) => (e.Left = "left", e.Right = "right", e.Center = "center", e.LeftCorner = "left-corner", e.RightCorner = "right-corner", e))(Ae || {}), we = ((e) => (e.LktAnchor = "lkt-anchor", e.LktLayoutAccordion = "lkt-layout-accordion", e.LktTextAccordion = "lkt-text-accordion", e.LktLayoutBox = "lkt-layout-box", e.LktTextBox = "lkt-text-box", e.LktLayoutBanner = "lkt-layout-banner", e.LktTextBanner = "lkt-text-banner", e.LktButton = "lkt-button", e.LktLayout = "lkt-layout", e.LktHeader = "lkt-header", e.LktIcon = "lkt-icon", e.LktImage = "lkt-image", e.LktText = "lkt-text", e))(we || {}), Se = ((e) => (e.Grid = "grid", e.FlexRow = "flex-row", e.FlexRows = "flex-rows", e.FlexColumn = "flex-column", e))(Se || {}), Pe = ((e) => (e.None = "", e.Focus = "focus", e.Blur = "blur", e.Always = "always", e))(Pe || {}), De = ((e) => (e.Auto = "auto", e.Local = "local", e.Remote = "remote", e))(De || {}), Be = ((e) => (e.Refresh = "refresh", e.Close = "close", e.ReOpen = "reOpen", e.Exec = "exec", e.Open = "open", e))(Be || {}), Ee = ((e) => (e.Asc = "asc", e.Desc = "desc", e))(Ee || {}), Ie = ((e) => (e.Create = "create", e.Update = "update", e.Edit = "edit", e.Drop = "drop", e.Sort = "sort", e.SwitchEditMode = "switch-edit-mode", e.InlineEdit = "inline-edit", e.InlineCreate = "inline-create", e.ModalCreate = "modal-create", e.InlineCreateEver = "inline-create-ever", e))(Ie || {}), Me = ((e) => (e.Lazy = "lazy", e.Ever = "ever", e))(Me || {}), He = ((e) => (e.Quick = "quick", e.Full = "full", e))(He || {});
+function Te(e) {
   let t = new e(), r = {};
   if (!Array.isArray(e.lktDefaultValues)) throw new Error("lktDefaultValues must be a keys array.");
-  for (let s of e.lktDefaultValues) s in t && (r[s] = t[s]);
+  for (let u of e.lktDefaultValues) u in t && (r[u] = t[u]);
   return r;
 }
-const Ie = { class: "lkt-banner-main" }, He = { class: "lkt-banner-content" }, Me = {
+const Ne = { class: "lkt-banner-main" }, Re = { class: "lkt-banner-content" }, _e = { class: "lkt-banner-content-main" }, Fe = {
   key: 0,
-  class: "lkt-banner-label-container"
-}, Be = {
+  class: "lkt-banner-header-container"
+}, ze = {
   key: 1,
-  class: "lkt-banner-sub-label-container"
-}, Te = {
+  class: "lkt-banner-sub-header-container"
+}, Ue = {
   key: 2,
   class: "lkt-banner-extra"
-}, Ne = /* @__PURE__ */ T({
+}, Ve = /* @__PURE__ */ R({
   __name: "LktBannerBox",
-  props: /* @__PURE__ */ N({
+  props: /* @__PURE__ */ _({
     type: {},
     header: {},
     subHeader: {},
     art: {},
+    media: {},
     opacity: {}
-  }, Ee($)),
+  }, Te(X)),
   setup(e) {
-    const t = e, r = R(), s = c(() => {
+    const t = e, r = F(), u = i(() => {
       var a;
       return (a = t.header) != null && a.tag ? t.header.tag : "p";
-    }), p = c(() => {
+    }), m = i(() => {
       var a;
       return (a = t.subHeader) != null && a.tag ? t.subHeader.tag : "p";
-    }), k = c(() => {
+    }), b = i(() => {
       var a;
       return ((a = t.art) == null ? void 0 : a.src) !== "";
-    }), P = c(() => k.value ? !!t.opacity : !1), E = c(() => {
-      var a, m;
-      return (a = t.art) != null && a.src ? 'background-image: url("' + ((m = t.art) == null ? void 0 : m.src) + '");' : "";
-    }), I = c(() => t.opacity ? "opacity: " + t.opacity : ""), H = c(() => {
+    }), D = i(() => {
+      var a;
+      return ((a = t.media) == null ? void 0 : a.src) !== "";
+    }), B = i(() => b.value ? !!t.opacity : !1), E = i(() => {
+      var a, p;
+      return (a = t.art) != null && a.src ? 'background-image: url("' + ((p = t.art) == null ? void 0 : p.src) + '");' : "";
+    }), I = i(() => t.opacity ? "opacity: " + t.opacity : ""), M = i(() => {
       let a = [];
-      return t.type === D.Parallax && a.push("is-parallax"), a.join(" ");
+      return t.type === P.Parallax && a.push("is-parallax"), a.join(" ");
     });
-    return (a, m) => {
-      var y, b;
-      return n(), i("div", {
-        class: F(["lkt-banner", H.value])
+    return (a, p) => {
+      var f, x;
+      const H = z("lkt-image");
+      return l(), s("div", {
+        class: U(["lkt-banner", M.value])
       }, [
-        f("div", Ie, [
-          k.value ? (n(), i("div", {
+        h("div", Ne, [
+          b.value ? (l(), s("div", {
             key: 0,
             class: "lkt-banner-art",
-            style: x(E.value)
-          }, null, 4)) : u("", !0),
-          P.value ? (n(), i("div", {
+            style: g(E.value)
+          }, null, 4)) : c("", !0),
+          B.value ? (l(), s("div", {
             key: 1,
             class: "lkt-banner-opacity",
-            style: x(I.value)
-          }, null, 4)) : u("", !0),
-          f("div", He, [
-            (y = a.header) != null && y.text || d(r).header ? (n(), i("div", Me, [
-              (n(), g(C(s.value), { class: "lkt-banner-label" }, {
-                default: L(() => [
-                  d(r).header ? v(a.$slots, "header", { key: 0 }) : (n(), i(A, { key: 1 }, [
-                    w(S(a.header.text), 1)
-                  ], 64))
-                ]),
-                _: 3
-              }))
-            ])) : u("", !0),
-            (b = a.subHeader) != null && b.text || d(r).subHeader ? (n(), i("div", Be, [
-              (n(), g(C(p.value), { class: "lkt-banner-sub-label" }, {
-                default: L(() => [
-                  d(r).subHeader ? v(a.$slots, "subHeader", { key: 0 }) : (n(), i(A, { key: 1 }, [
-                    w(S(a.subHeader.text), 1)
-                  ], 64))
-                ]),
-                _: 3
-              }))
-            ])) : u("", !0),
-            d(r).default ? (n(), i("div", Te, [
-              v(a.$slots, "default")
-            ])) : u("", !0)
+            style: g(I.value)
+          }, null, 4)) : c("", !0),
+          h("div", Re, [
+            D.value ? (l(), v(H, V(O({ key: 0 }, a.media)), null, 16)) : c("", !0),
+            h("div", _e, [
+              (f = a.header) != null && f.text || d(r).header ? (l(), s("div", Fe, [
+                (l(), v(C(u.value), { class: "lkt-banner-header" }, {
+                  default: L(() => [
+                    d(r).header ? k(a.$slots, "header", { key: 0 }) : (l(), s(A, { key: 1 }, [
+                      w(S(a.header.text), 1)
+                    ], 64))
+                  ]),
+                  _: 3
+                }))
+              ])) : c("", !0),
+              (x = a.subHeader) != null && x.text || d(r).subHeader ? (l(), s("div", ze, [
+                (l(), v(C(m.value), { class: "lkt-banner-sub-header" }, {
+                  default: L(() => [
+                    d(r).subHeader ? k(a.$slots, "subHeader", { key: 0 }) : (l(), s(A, { key: 1 }, [
+                      w(S(a.subHeader.text), 1)
+                    ], 64))
+                  ]),
+                  _: 3
+                }))
+              ])) : c("", !0),
+              d(r).default ? (l(), s("div", Ue, [
+                k(a.$slots, "default")
+              ])) : c("", !0)
+            ])
           ])
         ])
       ], 2);
     };
   }
-}), Ue = {
+}), $e = {
   install: (e) => {
-    e.component("lkt-banner") === void 0 && e.component("lkt-banner", Ne);
+    e.component("lkt-banner") === void 0 && e.component("lkt-banner", Ve);
   }
 };
 export {
-  Ue as default
+  $e as default
 };
