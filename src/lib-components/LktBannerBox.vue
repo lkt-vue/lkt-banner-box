@@ -82,5 +82,9 @@
                 </div>
             </div>
         </div>
+
+        <template v-if="slots['web-element-actions']">
+            <slot name="web-element-actions"/>
+        </template>
     </div>
 </template>

@@ -1,4 +1,4 @@
-export { $e as default };
-declare namespace $e {
+export { qe as default };
+declare namespace qe {
     function install(e: any): void;
 }
