@@ -50,33 +50,13 @@
     --lkt-banner--content-main--padding: 15px;
     --lkt-banner--content-main--width: 100%;
 
-    /** Element: Header Container */
-    --lkt-banner--header--container--align-items: center;
-    --lkt-banner--header--container--flex-direction: column;
-    --lkt-banner--header--container--justify-content: center;
-    --lkt-banner--header--container--width: 100%;
-
-    /** Element: Header */
-    --lkt-banner--header---font-family: system-ui, Helvetica;
-    --lkt-banner--header---font-size: 17px;
-    --lkt-banner--header---font-weight: 400;
-    --lkt-banner--header---line-height: 1;
-    --lkt-banner--header---margin: 0;
-    --lkt-banner--header---text-align: left;
-
-    /** Element: Sub Header Container */
-    --lkt-banner--sub-header--container--align-items: center;
-    --lkt-banner--sub-header--container--flex-direction: column;
-    --lkt-banner--sub-header--container--justify-content: center;
-    --lkt-banner--sub-header--container--width: 100%;
-
-    /** Element: Sub Header */
-    --lkt-banner--sub-header---font-family: system-ui, Helvetica;
-    --lkt-banner--sub-header---font-size: 17px;
-    --lkt-banner--sub-header---font-weight: 400;
-    --lkt-banner--sub-header---line-height: 1;
-    --lkt-banner--sub-header---margin: 0;
-    --lkt-banner--sub-header---text-align: left;
+    /** Element: Nav Buttons */
+    --lkt-banner--nav-buttons--align-items: center;
+    --lkt-banner--nav-buttons--flex-direction: row;
+    --lkt-banner--nav-buttons--gap: 15px;
+    --lkt-banner--nav-buttons--justify-content: center;
+    --lkt-banner--nav-buttons--padding: 15px;
+    --lkt-banner--nav-buttons--width: 100%;
 
     /** Element: Extra */
     --lkt-banner--extra---font-family: system-ui, Helvetica;

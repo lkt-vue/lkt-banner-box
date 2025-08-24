@@ -6,19 +6,11 @@
 
     const slots = useSlots();
 
-    const computedLabelTag = computed(() => {
-            if (!props.header?.tag) return 'p';
-            return props.header.tag;
-        }),
-        computedSubLabelTag = computed(() => {
-            if (!props.subHeader?.tag) return 'p';
-            return props.subHeader.tag;
-        }),
-        renderArtBox = computed(() => {
+    const renderArtBox = computed(() => {
             return props.art?.src !== '';
         }),
         renderMediaBox = computed(() => {
-            return props.media?.src !== '';
+            return props.media && props.media?.src && props.media?.src !== '';
         }),
         renderOpacityBox = computed(() => {
             if (!renderArtBox.value) return false;
@@ -37,54 +29,66 @@
             let r = [];
             if (props.type === BannerType.Parallax) r.push('is-parallax');
             return r.join(' ');
+        }),
+        computedGlobalTag = computed(() => {
+            if (typeof props.globalButton !== 'undefined') return 'lkt-button';
+            return 'div';
+        }),
+        computedGlobalAttrs = computed(() => {
+            if (typeof props.globalButton !== 'undefined') return props.globalButton;
+            return {};
+        }),
+        computedGlobalClass = computed(() => {
+            if (typeof props.globalButton !== 'undefined') return 'lkt-banner--global-button';
+            return '';
         });
 
 </script>
 
 <template>
-    <div class="lkt-banner" :class="classes">
-        <div class="lkt-banner-main">
-            <div class="lkt-banner-art" v-if="renderArtBox" :style="computedArtStyles"></div>
-            <div class="lkt-banner-opacity" v-if="renderOpacityBox" :style="computedOpacityStyles"></div>
-            <div class="lkt-banner-content">
+    <component :is="computedGlobalTag"
+               v-bind="computedGlobalAttrs"
+               :class="computedGlobalClass"
+    >
+        <div class="lkt-banner" :class="classes">
 
-                <lkt-image
-                    v-if="renderMediaBox"
-                    v-bind="media"
-                />
+            <div class="lkt-banner--main">
+                <div class="lkt-banner--art" v-if="renderArtBox" :style="computedArtStyles"/>
+                <div class="lkt-banner--opacity" v-if="renderOpacityBox" :style="computedOpacityStyles"/>
+                <div class="lkt-banner--content">
 
-                <div class="lkt-banner-content-main">
-                    <div v-if="header?.text || slots.header" class="lkt-banner-header-container">
-                        <component :is="computedLabelTag" class="lkt-banner-header">
-                            <template v-if="slots.header">
+                    <lkt-image
+                        v-if="renderMediaBox"
+                        v-bind="media"
+                    />
+
+                    <div class="lkt-banner--content-main">
+                        <lkt-header v-if="header?.text || slots.header" v-bind="header" class="lkt-banner--header">
+                            <template v-if="slots.header" #text>
                                 <slot name="header" />
                             </template>
-                            <template v-else>
-                                {{ header.text }}
-                            </template>
-                        </component>
-                    </div>
+                        </lkt-header>
 
-                    <div v-if="subHeader?.text || slots.subHeader" class="lkt-banner-sub-header-container">
-                        <component :is="computedSubLabelTag" class="lkt-banner-sub-header">
-                            <template v-if="slots.subHeader">
+                        <lkt-header v-if="subHeader?.text || slots.subHeader" v-bind="subHeader" class="lkt-banner--sub-header">
+                            <template v-if="slots.subHeader" #text>
                                 <slot name="subHeader" />
                             </template>
-                            <template v-else>
-                                {{ subHeader.text }}
-                            </template>
-                        </component>
-                    </div>
+                        </lkt-header>
 
-                    <div v-if="slots.default" class="lkt-banner-extra">
-                        <slot />
+                        <div v-if="slots.default" class="lkt-banner--extra">
+                            <slot />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <template v-if="slots['web-element-actions']">
-            <slot name="web-element-actions"/>
-        </template>
-    </div>
+            <nav v-if="navButtons.length > 0" class="lkt-banner--nav-buttons">
+                <lkt-button v-for="btn in navButtons" v-bind="btn"/>
+            </nav>
+
+            <template v-if="slots['web-element-actions']">
+                <slot name="web-element-actions"/>
+            </template>
+        </div>
+    </component>
 </template>
