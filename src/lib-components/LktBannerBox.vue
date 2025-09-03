@@ -7,7 +7,8 @@
     const slots = useSlots();
 
     const renderArtBox = computed(() => {
-            return props.art?.src !== '';
+            return typeof props.art?.src === 'string'
+                && props.art?.src !== '';
         }),
         renderMediaBox = computed(() => {
             return props.media && props.media?.src && props.media?.src !== '';

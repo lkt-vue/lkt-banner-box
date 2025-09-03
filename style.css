@@ -110,4 +110,5 @@
     line-height: var(--lkt-banner--extra---line-height);
     text-align: var(--lkt-banner--extra---text-align);
     margin: var(--lkt-banner--extra---margin);
+    width: var(--lkt-banner--extra---width);
 }

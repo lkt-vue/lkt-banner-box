@@ -65,6 +65,7 @@
     --lkt-banner--extra---line-height: 1;
     --lkt-banner--extra---margin: 0;
     --lkt-banner--extra---text-align: left;
+    --lkt-banner--extra---width: initial;
 
     /** Element: Opacity */
     --lkt-banner--opacity--background: #ffffff;

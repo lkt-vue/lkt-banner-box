@@ -1,13 +1,13 @@
 var _ = Object.defineProperty;
 var F = (e, t, r) => t in e ? _(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r }) : e[t] = r;
 var n = (e, t, r) => F(e, typeof t != "symbol" ? t + "" : t, r);
-import { defineComponent as X, mergeDefaults as z, useSlots as U, computed as i, resolveComponent as b, createBlock as m, openBlock as l, resolveDynamicComponent as V, mergeProps as v, withCtx as y, createElementVNode as h, normalizeClass as O, createElementBlock as p, createCommentVNode as u, renderSlot as k, normalizeStyle as w, normalizeProps as G, unref as d, createSlots as B, Fragment as $, renderList as j } from "vue";
+import { defineComponent as X, mergeDefaults as z, useSlots as U, computed as s, resolveComponent as b, createBlock as m, openBlock as l, resolveDynamicComponent as V, mergeProps as v, withCtx as y, createElementVNode as h, normalizeClass as O, createElementBlock as p, createCommentVNode as c, renderSlot as k, normalizeStyle as w, normalizeProps as G, unref as d, createSlots as B, Fragment as $, renderList as j } from "vue";
 import "lkt-string-tools";
 var q = ((e) => (e.Button = "button", e.Submit = "submit", e.Reset = "reset", e.Anchor = "anchor", e.Content = "content", e.Switch = "switch", e.HiddenSwitch = "hidden-switch", e.Split = "split", e.SplitLazy = "split-lazy", e.SplitEver = "split-ever", e.Tooltip = "tooltip", e.TooltipLazy = "tooltip-lazy", e.TooltipEver = "tooltip-ever", e.FileUpload = "file-upload", e.ImageUpload = "image-upload", e))(q || {}), K = ((e) => (e.Text = "text", e.Email = "email", e.Tel = "tel", e.Password = "password", e.Search = "search", e.Number = "number", e.Color = "color", e.Range = "range", e.Textarea = "textarea", e.Html = "html", e.Date = "date", e.Time = "time", e.DateTime = "datetime", e.File = "file", e.Image = "image", e.Select = "select", e.Check = "check", e.Switch = "switch", e.Calc = "calc", e.Card = "card", e.Table = "table", e.Radio = "radio", e.ToggleButtonGroup = "toggle-button-group", e))(K || {}), Q = ["lktDateProps", "lktStrictItem", "lktExcludedProps"], o, J = (o = class {
   constructor(t) {
   }
   feed(t = {}, r = this) {
-    if (typeof t == "object") for (let [s, f] of Object.entries(t)) r.assignProp(s, f);
+    if (typeof t == "object") for (let [u, f] of Object.entries(t)) r.assignProp(u, f);
   }
   assignProp(t, r) {
     if (!(Q.includes(t) || o.lktExcludedProps.includes(t))) {
@@ -35,7 +35,7 @@ var q = ((e) => (e.Button = "button", e.Submit = "submit", e.Reset = "reset", e.
 function $e(e) {
   let t = new e(), r = {};
   if (!Array.isArray(e.lktDefaultValues)) throw new Error("lktDefaultValues must be a keys array.");
-  for (let s of e.lktDefaultValues) s in t && (r[s] = t[s]);
+  for (let u of e.lktDefaultValues) u in t && (r[u] = t[u]);
   return r;
 }
 const je = { class: "lkt-banner--main" }, qe = { class: "lkt-banner--content" }, Ke = { class: "lkt-banner--content-main" }, Qe = {
@@ -57,20 +57,20 @@ const je = { class: "lkt-banner--main" }, qe = { class: "lkt-banner--content" },
     navButtons: {}
   }, $e(ee)),
   setup(e) {
-    const t = e, r = U(), s = i(() => {
-      var a;
-      return ((a = t.art) == null ? void 0 : a.src) !== "";
-    }), f = i(() => {
-      var a, c;
-      return t.media && ((a = t.media) == null ? void 0 : a.src) && ((c = t.media) == null ? void 0 : c.src) !== "";
-    }), S = i(() => s.value ? !!t.opacity : !1), D = i(() => {
-      var a, c;
-      return (a = t.art) != null && a.src ? 'background-image: url("' + ((c = t.art) == null ? void 0 : c.src) + '");' : "";
-    }), P = i(() => t.opacity ? "opacity: " + t.opacity : ""), M = i(() => {
+    const t = e, r = U(), u = s(() => {
+      var a, i;
+      return typeof ((a = t.art) == null ? void 0 : a.src) == "string" && ((i = t.art) == null ? void 0 : i.src) !== "";
+    }), f = s(() => {
+      var a, i;
+      return t.media && ((a = t.media) == null ? void 0 : a.src) && ((i = t.media) == null ? void 0 : i.src) !== "";
+    }), S = s(() => u.value ? !!t.opacity : !1), D = s(() => {
+      var a, i;
+      return (a = t.art) != null && a.src ? 'background-image: url("' + ((i = t.art) == null ? void 0 : i.src) + '");' : "";
+    }), P = s(() => t.opacity ? "opacity: " + t.opacity : ""), M = s(() => {
       let a = [];
       return t.type === A.Parallax && a.push("is-parallax"), a.join(" ");
-    }), T = i(() => typeof t.globalButton < "u" ? "lkt-button" : "div"), I = i(() => typeof t.globalButton < "u" ? t.globalButton : {}), E = i(() => typeof t.globalButton < "u" ? "lkt-banner--global-button" : "");
-    return (a, c) => {
+    }), T = s(() => typeof t.globalButton < "u" ? "lkt-button" : "div"), I = s(() => typeof t.globalButton < "u" ? t.globalButton : {}), E = s(() => typeof t.globalButton < "u" ? "lkt-banner--global-button" : "");
+    return (a, i) => {
       const H = b("lkt-image"), g = b("lkt-header"), N = b("lkt-button");
       return l(), m(V(T.value), v(I.value, { class: E.value }), {
         default: y(() => {
@@ -80,18 +80,18 @@ const je = { class: "lkt-banner--main" }, qe = { class: "lkt-banner--content" },
               class: O(["lkt-banner", M.value])
             }, [
               h("div", je, [
-                s.value ? (l(), p("div", {
+                u.value ? (l(), p("div", {
                   key: 0,
                   class: "lkt-banner--art",
                   style: w(D.value)
-                }, null, 4)) : u("", !0),
+                }, null, 4)) : c("", !0),
                 S.value ? (l(), p("div", {
                   key: 1,
                   class: "lkt-banner--opacity",
                   style: w(P.value)
-                }, null, 4)) : u("", !0),
+                }, null, 4)) : c("", !0),
                 h("div", qe, [
-                  f.value ? (l(), m(H, G(v({ key: 0 }, a.media)), null, 16)) : u("", !0),
+                  f.value ? (l(), m(H, G(v({ key: 0 }, a.media)), null, 16)) : c("", !0),
                   h("div", Ke, [
                     (C = a.header) != null && C.text || d(r).header ? (l(), m(g, v({ key: 0 }, a.header, { class: "lkt-banner--header" }), B({ _: 2 }, [
                       d(r).header ? {
@@ -101,7 +101,7 @@ const je = { class: "lkt-banner--main" }, qe = { class: "lkt-banner--content" },
                         ]),
                         key: "0"
                       } : void 0
-                    ]), 1040)) : u("", !0),
+                    ]), 1040)) : c("", !0),
                     (L = a.subHeader) != null && L.text || d(r).subHeader ? (l(), m(g, v({ key: 1 }, a.subHeader, { class: "lkt-banner--sub-header" }), B({ _: 2 }, [
                       d(r).subHeader ? {
                         name: "text",
@@ -110,17 +110,17 @@ const je = { class: "lkt-banner--main" }, qe = { class: "lkt-banner--content" },
                         ]),
                         key: "0"
                       } : void 0
-                    ]), 1040)) : u("", !0),
+                    ]), 1040)) : c("", !0),
                     d(r).default ? (l(), p("div", Qe, [
                       k(a.$slots, "default")
-                    ])) : u("", !0)
+                    ])) : c("", !0)
                   ])
                 ])
               ]),
               a.navButtons.length > 0 ? (l(), p("nav", Je, [
                 (l(!0), p($, null, j(a.navButtons, (R) => (l(), m(N, v({ ref_for: !0 }, R), null, 16))), 256))
-              ])) : u("", !0),
-              d(r)["web-element-actions"] ? k(a.$slots, "web-element-actions", { key: 1 }) : u("", !0)
+              ])) : c("", !0),
+              d(r)["web-element-actions"] ? k(a.$slots, "web-element-actions", { key: 1 }) : c("", !0)
             ], 2)
           ];
         }),
